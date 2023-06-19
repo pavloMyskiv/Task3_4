@@ -1,0 +1,20 @@
+.todo_list {
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 50%;
+  flex: 1 1 auto;
+  background-color: rgb(189, 170, 196);
+}
+.todo_list h1 {
+  padding: 12px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.todo {
+  padding: 10px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.todo h2 {
+  font-size: 24px;
+}
