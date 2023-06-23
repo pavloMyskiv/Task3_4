@@ -1,6 +1,6 @@
 import React from 'react';
 import './UserList.css';
-import { useGetUsersQuery } from '../../store/appAPI';
+import { useGetUsersQuery } from '../../store/AppAPI/userAPI.js';
 
 export const UserList = () => {
   const { data:usersList = [] } = useGetUsersQuery();

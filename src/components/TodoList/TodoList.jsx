@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoList.css';
-import { useGetTodosQuery } from '../../store/appAPI';
+import { useGetTodosQuery } from '../../store/AppAPI/todoAPI.js';
 
 export const TodoList = () => {
   const { data: todosList = [] } = useGetTodosQuery();

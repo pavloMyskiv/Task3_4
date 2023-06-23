@@ -1,6 +1,8 @@
+/** @format */
+
 import React from 'react';
 import './PostList.css';
-import { useGetPostsQuery } from '../../store/appAPI';
+import { useGetPostsQuery } from '../../store/AppAPI/postAPI.js';
 
 export const PostList = () => {
   const { data: postsList = [] } = useGetPostsQuery();
