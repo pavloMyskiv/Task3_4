@@ -9,18 +9,28 @@ export const PostList = () => {
     error,
     isError,
   } = useGetPostsQuery();
-  return (
-    <div className="post_list">
-      <h1>Posts</h1>
-      {isError ? (
+  if (isLoading) {
+    return (
+      <div className="user_list">
+        <h1>Posts</h1>
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (isError) {
+    return (
+      <div className="user_list">
+        <h1>Posts</h1>
         <div className="error">
           <h3>ERROR:{error.status}</h3>
           <p>{JSON.stringify(error.data)}</p>
         </div>
-      ) : (
-        ''
-      )}
-      {isLoading ? <div className="loader"></div> : ''}
+      </div>
+    );
+  }
+  return (
+    <div className="post_list">
+      <h1>Posts</h1>
       {postsList.map((post) => (
         <div className="post" key={post.id}>
           <h2>{post.title}</h2>

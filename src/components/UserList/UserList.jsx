@@ -9,19 +9,29 @@ export const UserList = () => {
     error,
     isError,
   } = useGetUsersQuery();
-
-  return (
-    <div className="user_list">
-      <h1>Users</h1>
-      {isError ? (
+  if (isLoading) {
+    return (
+      <div className="user_list">
+        <h1>Users</h1>
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (isError) {
+    return (
+      <div className="user_list">
+        <h1>Users</h1>
         <div className="error">
           <h3>ERROR:{error.status}</h3>
           <p>{JSON.stringify(error.data)}</p>
         </div>
-      ) : (
-        ''
-      )}
-      {isLoading ? <div className="loader"></div> : ''}
+      </div>
+    );
+  }
+
+  return (
+    <div className="user_list">
+      <h1>Users</h1>
       {usersList.map((user) => (
         <div className="user" key={user.id}>
           <div className="user_info">
